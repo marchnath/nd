@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Minimal accent system retained only for accent-word-bg */
+:root {
+  --accent-blue-soft: 37 99 235;
+}
+
+/* Small pill background behind single words (retained) */
+.accent-word-bg {
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+}
+.accent-word-bg > span {
+  position: relative;
+  z-index: 10;
+}
+.accent-word-bg:before {
+  content: "";
+  position: absolute;
+  inset: 6% -6%;
+  background: linear-gradient(
+    95deg,
+    rgba(var(--accent-blue-soft) / 0.14),
+    rgba(var(--accent-blue-soft) / 0.04)
+  );
+  border-radius: 0.65rem;
+  box-shadow: 0 2px 6px -2px rgba(var(--accent-blue-soft) / 0.25),
+    0 0 0 1px rgba(var(--accent-blue-soft) / 0.15);
+  transform: rotate(-2deg);
+  z-index: 1;
+}
