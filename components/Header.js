@@ -16,7 +16,9 @@ const Header = () => {
           {/* Logo */}
           <a href="#" className="flex items-center space-x-2 group">
             <img src="/logo3.png" alt="Nerdytics Logo" className="h-10 w-10" />
-            <span className="text-xl font-semibold tracking-tight">Nerdytics</span>
+            <span className="text-xl font-semibold tracking-tight">
+              Nerdytics
+            </span>
           </a>
 
           {/* Nav (desktop) */}
