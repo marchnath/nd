@@ -1,4 +1,5 @@
 import React from "react";
+import { buildWhatsAppLink } from "@/lib/utils";
 
 // Simple static testimonial data; can be replaced with real submissions later.
 const testimonials = [
@@ -73,7 +74,9 @@ const Testimonials = () => {
             Want a deeper case breakdown?
           </div>
           <a
-            href="https://wa.me/2349011551837"
+            href={buildWhatsAppLink(
+              "Hi Nerdytics, could you share a detailed sample case study?"
+            )}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex text-sm font-medium text-black underline underline-offset-4 decoration-dotted hover:opacity-80"

@@ -1,5 +1,6 @@
 import React from "react";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { buildWhatsAppLink } from "@/lib/utils";
 
 /**
  * SocialGroup
@@ -22,7 +23,7 @@ export const SocialGroup = ({ size = "md" }) => {
       aria-label="Social links"
     >
       <a
-        href="https://wa.me/yourNumber"
+        href={buildWhatsAppLink("Hi Nerdytics!")}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp"

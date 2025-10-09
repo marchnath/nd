@@ -2,6 +2,7 @@ import { Hexagon } from "lucide-react";
 import { FaWhatsapp, FaInstagram, FaTelegramPlane } from "react-icons/fa";
 import { PiTelegramLogo } from "react-icons/pi";
 import { Footer } from "@/components/ui/footer";
+import { buildWhatsAppLink } from "@/lib/utils";
 
 // Using react-icons for social media brand icons
 
@@ -19,7 +20,9 @@ function MyFooter() {
               a shippable plan in minutes.
             </p>
             <a
-              href="https://wa.me/2349011551837"
+              href={buildWhatsAppLink(
+                "Hi Nerdytics, I’d like to book a free discovery call."
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-sm font-medium text-black hover:underline"
@@ -35,7 +38,9 @@ function MyFooter() {
         socialLinks={[
           {
             icon: <FaWhatsapp className="h-5 w-5" />,
-            href: "https://wa.me/2349011551837",
+            href: buildWhatsAppLink(
+              "Hi Nerdytics, I’d like to chat about a project."
+            ),
             label: "WhatsApp",
           },
           {

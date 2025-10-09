@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { buildWhatsAppLink } from "@/lib/utils";
 
 const CTA = () => {
   return (
@@ -48,7 +49,9 @@ const CTA = () => {
                 We reply within 15 minutes. No spam ever.
                 <span className="flex items-center gap-2">
                   <a
-                    href="https://wa.me/yourNumber"
+                    href={buildWhatsAppLink(
+                      "Hi Nerdytics, I’m interested in a quick discovery chat."
+                    )}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="WhatsApp"

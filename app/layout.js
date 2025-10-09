@@ -2,6 +2,7 @@ import { Geist } from "next/font/google";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import FloatingSocial from "@/components/FloatingSocial";
+import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 const geist = Geist({
   variable: "--font-geist",
@@ -54,7 +55,7 @@ export default function RootLayout({ children }) {
                 "We design, build and automate revenue-focused websites, apps & business systems.",
               sameAs: [
                 "https://www.instagram.com/nerdytics_",
-                "https://wa.me/2349011551837",
+                `https://wa.me/${WHATSAPP_NUMBER}`,
                 "https://t.me/nerdytics",
               ],
               contactPoint: [

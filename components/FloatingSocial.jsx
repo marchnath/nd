@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { buildWhatsAppLink } from "@/lib/utils";
 
 export const FloatingSocial = () => {
   return (
@@ -12,7 +13,9 @@ export const FloatingSocial = () => {
       {/* Icons Container */}
       <div className="group inline-flex items-center rounded-full bg-blue-600 text-white shadow-lg ring-1 ring-black/40 overflow-hidden">
         <a
-          href="https://wa.me/2349011551837"
+          href={buildWhatsAppLink(
+            "Hi Nerdytics, can we chat? I have a quick question."
+          )}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"

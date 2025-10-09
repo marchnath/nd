@@ -4,10 +4,10 @@ import { clientContactSchema, zodToErrors } from "@/lib/schemas/contact";
 // SocialGroup removed; floating global component now handles social links.
 
 const stats = [
-  { label: "90% projects < 2 weeks" },
-  { label: "Automation-first builds" },
-  { label: "Transparent pricing" },
   { label: "Full ownership" },
+  { label: "Transparent pricing" },
+  { label: "90% projects < 2 weeks" },
+  { label: "Work You’ll Love — Guaranteed" },
 ];
 
 const Hero = () => {
