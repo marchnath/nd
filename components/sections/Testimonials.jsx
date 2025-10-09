@@ -32,10 +32,10 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="py-24 bg-gradient-to-b from-white to-gray-50"
+      className="py-14 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white to-gray-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-14">
+        <div className="max-w-3xl mb-8 md:mb-10 lg:mb-14">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
             Results &{" "}
             <span className="accent-word-bg">
@@ -68,7 +68,7 @@ const Testimonials = () => {
             </div>
           ))}
         </div>
-        <div className="mt-14 flex flex-col sm:flex-row items-center gap-4">
+        <div className="mt-10 md:mt-12 lg:mt-14 flex flex-col sm:flex-row items-center gap-4">
           <div className="text-sm text-gray-600">
             Want a deeper case breakdown?
           </div>

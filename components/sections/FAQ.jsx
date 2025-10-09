@@ -30,9 +30,9 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section id="faq" className="py-24 bg-white">
+    <section id="faq" className="py-14 sm:py-16 md:py-20 lg:py-24 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-12">
+        <div className="max-w-3xl mb-8 md:mb-10 lg:mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
             Frequently Asked
           </h2>

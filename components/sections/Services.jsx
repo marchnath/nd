@@ -54,9 +54,12 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 bg-white">
+    <section
+      id="services"
+      className="py-14 sm:py-16 md:py-20 lg:py-24 bg-white"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-12">
+        <div className="max-w-3xl mb-8 md:mb-10 lg:mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
             <span className="accent-word-bg">
               <span>Services</span>
@@ -108,7 +111,7 @@ const Services = () => {
         </div>
 
         {/* Comparison / What you get */}
-        <div className="mt-20 rounded-2xl border border-gray-200 p-8 bg-gradient-to-br from-white to-gray-50">
+        <div className="mt-12 md:mt-16 lg:mt-20 rounded-2xl border border-gray-200 p-6 md:p-8 bg-gradient-to-br from-white to-gray-50">
           <h3 className="text-xl font-semibold tracking-tight mb-6">
             What You Get
           </h3>
