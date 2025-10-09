@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
 export function Footer({
   logo,
@@ -6,13 +6,17 @@ export function Footer({
   socialLinks,
   mainLinks,
   legalLinks,
-  copyright
+  copyright,
 }) {
   return (
-    (<footer className="pb-6 pt-16 lg:pb-8 lg:pt-24">
+    <footer className="pb-6 pt-16 lg:pb-8 lg:pt-24">
       <div className="px-4 lg:px-8">
         <div className="md:flex md:items-start md:justify-between">
-          <a href="/" className="flex items-center gap-x-2" aria-label={brandName}>
+          <a
+            href="/"
+            className="flex items-center gap-x-2"
+            aria-label={brandName}
+          >
             {logo}
             <span className="font-bold text-xl">{brandName}</span>
           </a>
@@ -23,8 +27,14 @@ export function Footer({
                   variant="secondary"
                   size="icon"
                   className="h-10 w-10 rounded-full"
-                  asChild>
-                  <a href={link.href} target="_blank" aria-label={link.label}>
+                  asChild
+                >
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer me"
+                    aria-label={link.label}
+                  >
                     {link.icon}
                   </a>
                 </Button>
@@ -39,7 +49,8 @@ export function Footer({
                 <li key={i} className="my-1 mx-2 shrink-0">
                   <a
                     href={link.href}
-                    className="text-sm text-primary underline-offset-4 hover:underline">
+                    className="text-sm text-primary underline-offset-4 hover:underline"
+                  >
                     {link.label}
                   </a>
                 </li>
@@ -52,20 +63,20 @@ export function Footer({
                 <li key={i} className="my-1 mx-3 shrink-0">
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground underline-offset-4 hover:underline">
+                    className="text-sm text-muted-foreground underline-offset-4 hover:underline"
+                  >
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
-          <div
-            className="mt-6 text-sm leading-6 text-muted-foreground whitespace-nowrap lg:mt-0 lg:row-[1/3] lg:col-[1/4]">
+          <div className="mt-6 text-sm leading-6 text-muted-foreground whitespace-nowrap lg:mt-0 lg:row-[1/3] lg:col-[1/4]">
             <div>{copyright.text}</div>
             {copyright.license && <div>{copyright.license}</div>}
           </div>
         </div>
       </div>
-    </footer>)
+    </footer>
   );
 }

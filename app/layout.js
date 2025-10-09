@@ -22,6 +22,8 @@ export const metadata = {
     description:
       "Websites, apps, custom software & automation delivered fast with clear pricing and full ownership.",
     type: "website",
+    url: "https://nerdytics.com",
+    siteName: "Nerdytics",
   },
   twitter: {
     card: "summary_large_image",
@@ -50,7 +52,20 @@ export default function RootLayout({ children }) {
               url: "https://nerdytics.com",
               description:
                 "We design, build and automate revenue-focused websites, apps & business systems.",
-              sameAs: ["https://twitter.com", "https://github.com"],
+              sameAs: [
+                "https://www.instagram.com/nerdytics_",
+                "https://wa.me/2349011551837",
+                "https://t.me/nerdytics",
+              ],
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  contactType: "customer support",
+                  telephone: "+2349011551837",
+                  availableLanguage: ["English"],
+                  areaServed: "NG",
+                },
+              ],
               offers: {
                 "@type": "Offer",
                 priceCurrency: "USD",
