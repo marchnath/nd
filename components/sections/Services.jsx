@@ -100,8 +100,10 @@ const Services = () => {
                 ))}
               </ul>
               <a
-                href="#contact"
-                className="mt-auto inline-flex items-center justify-center w-full text-sm font-medium bg-black text-white px-4 py-2.5 rounded-md hover:bg-gray-900 transition-colors"
+                href="https://wa.me/2347068241848?text=Hi%20Nerdytics%2C%20I%20want%20to%20start%20the%20%5Bservice%5D%20package.%20Can%20we%20chat%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto inline-flex items-center justify-center w-full text-sm font-medium bg-black text-white px-3 py-2 rounded-full sm:px-4 sm:py-2.5 sm:rounded-md hover:bg-gray-900 transition-colors"
               >
                 Start This
               </a>

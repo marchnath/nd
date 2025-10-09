@@ -16,9 +16,7 @@ const Header = () => {
           {/* Logo */}
           <a href="#" className="flex items-center space-x-2 group">
             <img src="/logo3.png" alt="Nerdytics Logo" className="h-10 w-10" />
-            <span className="text-xl font-semibold tracking-tight">
-              Nerdytics
-            </span>
+            <span className="text-xl font-semibold tracking-tight">Nerdytics</span>
           </a>
 
           {/* Nav (desktop) */}
@@ -38,9 +36,10 @@ const Header = () => {
           <div className="flex items-center gap-3">
             <a
               href="#services"
-              className="inline-flex h-11 items-center px-5 text-sm font-medium border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+              className="inline-flex items-center h-9 px-3 text-xs sm:h-11 sm:px-5 sm:text-sm font-medium border border-gray-300 rounded-full sm:rounded-md hover:bg-gray-50 transition-colors"
             >
-              View Services & Pricing
+              <span className="sm:hidden">Services & Pricing</span>
+              <span className="hidden sm:inline">View Services & Pricing</span>
             </a>
           </div>
         </div>

@@ -194,7 +194,7 @@ const Hero = () => {
                 </div>
                 <button
                   disabled={status.loading}
-                  className="w-full inline-flex items-center justify-center rounded-md bg-black text-white text-sm font-semibold px-5 py-3 hover:bg-gray-900 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full inline-flex items-center justify-center rounded-full sm:rounded-md bg-black text-white text-sm font-semibold px-5 py-3 hover:bg-gray-900 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {status.loading ? "Sending…" : "Send Message →"}
                 </button>
