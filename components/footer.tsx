@@ -5,9 +5,6 @@ import { Footer } from "@/components/ui/footer";
 import { buildWhatsAppLink } from "@/lib/utils";
 import Image from "next/image";
 
-
-// Using react-icons for social media brand icons
-
 function MyFooter() {
   return (
     <div className="w-full bg-slate-900 text-white">
