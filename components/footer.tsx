@@ -25,14 +25,14 @@ function MyFooter() {
               Ready to automate your growth?
             </h3>
             <p className="text-slate-400 max-w-md text-lg">
-              Let's turn your manual processes into automated revenue engines.
+              Let&#39;s turn your manual processes into automated revenue engines.
             </p>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 md:justify-end">
             <a
               href={buildWhatsAppLink(
-                "Hi Nerdytics, I’d like to book a free discovery call."
+                "Hi Nerdytics, I&#39;d like to book a free discovery call."
               )}
               target="_blank"
               rel="noopener noreferrer"
@@ -56,7 +56,7 @@ function MyFooter() {
             {
               icon: <FaWhatsapp className="h-5 w-5" />,
               href: buildWhatsAppLink(
-                "Hi Nerdytics, I’d like to chat about a project."
+                "Hi Nerdytics, I&#39;d like to chat about a project."
               ),
               label: "WhatsApp",
             },

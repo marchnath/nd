@@ -7,6 +7,7 @@ import {
 } from "@radix-ui/react-icons";
 
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
+import Image from "next/image";
 
 const features = [
   {
@@ -24,7 +25,7 @@ const features = [
     cta: "Get Started",
     background: (
       <div className="absolute inset-0">
-        <img
+        <Image
           src="https://images.ctfassets.net/scrf7o05zai3/4deKvBiis9RuxWEcNSLIzJ/fe881791a86c112f9472d36582c2232c/FAQpages.jpg"
           alt="Web development illustration"
           className="absolute inset-0 w-full h-full object-cover grayscale"
@@ -49,7 +50,7 @@ const features = [
     cta: "Learn More",
     background: (
       <div className="absolute inset-0">
-        <img
+        <Image
           src="https://imageio.forbes.com/specials-images/imageserve/6697c3d1b6ae36a1aaeeb334/Internet-search-bar-in-browser-with-magnifier-on-computer-monitor-screen-/960x0.jpg?format=jpg&width=960"
           alt="Search bar with magnifier"
           className="absolute inset-0 w-full h-full object-cover grayscale"
@@ -74,7 +75,7 @@ const features = [
     cta: "Grow Now",
     background: (
       <div className="absolute inset-0">
-        <img
+        <Image
           src="https://techstory.in/wp-content/uploads/2020/10/how-to-get-instagram-followers-00-5eb415a7843bd-760x400-1.jpg"
           alt="Social media growth illustration"
           className="absolute inset-0 w-full h-full object-cover grayscale"
@@ -99,7 +100,7 @@ const features = [
     cta: "Convert More",
     background: (
       <div className="absolute inset-0">
-        <img
+        <Image
           src="https://www.leadfuze.com/wp-content/uploads/2020/12/building-a-good-relationship-with-client.jpg"
           alt="Lead capture and client relationship illustration"
           className="absolute inset-0 w-full h-full object-cover grayscale"
@@ -124,7 +125,7 @@ const features = [
     cta: "Brand Better",
     background: (
       <div className="absolute inset-0">
-        <img
+        <Image
           src="https://designbeep.com/wp-content/uploads/2014/03/6.Visual-Identity-and-Branding-Series-CIN.jpg"
           alt="Visual identity and branding illustration"
           className="absolute inset-0 w-full h-full object-cover grayscale"
