@@ -1,12 +1,76 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Minimal accent system retained only for accent-word-bg */
 :root {
-  --accent-blue-soft: 37 99 235;
+  /* Premium Color Palette */
+  --primary: 0 0 0; /* Black */
+  --primary-foreground: 255 255 255;
+  
+  --accent: 37 99 235; /* Royal Blue */
+  --accent-light: 96 165 250;
+  
+  --glass-border: 255 255 255;
+  --glass-bg: 255 255 255;
 }
 
-/* Small pill background behind single words (retained) */
+body {
+  background-color: #f8fafc; /* Slate 50 */
+  color: #0f172a; /* Slate 900 */
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: rgba(var(--glass-bg) / 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(var(--glass-border) / 0.5);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+    0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+
+/* Accent Word Styling */
 .accent-word-bg {
   position: relative;
   display: inline-block;
@@ -15,19 +79,21 @@
 .accent-word-bg > span {
   position: relative;
   z-index: 10;
+  background: linear-gradient(120deg, #2563eb, #4f46e5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .accent-word-bg:before {
   content: "";
   position: absolute;
-  inset: 6% -6%;
+  inset: -2px -8px;
   background: linear-gradient(
     95deg,
-    rgba(var(--accent-blue-soft) / 0.14),
-    rgba(var(--accent-blue-soft) / 0.04)
+    rgba(37, 99, 235, 0.1),
+    rgba(79, 70, 229, 0.05)
   );
-  border-radius: 0.65rem;
-  box-shadow: 0 2px 6px -2px rgba(var(--accent-blue-soft) / 0.25),
-    0 0 0 1px rgba(var(--accent-blue-soft) / 0.15);
+  border-radius: 0.5rem;
   transform: rotate(-2deg);
-  z-index: 1;
+  z-index: -1;
 }

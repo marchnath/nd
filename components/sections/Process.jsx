@@ -25,35 +25,49 @@ const steps = [
 
 const Process = () => {
   return (
-    <section id="process" className="py-14 sm:py-16 md:py-20 lg:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-8 md:mb-10 lg:mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+    <section id="process" className="py-20 sm:py-24 bg-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[20%] right-[5%] w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-3xl opacity-60" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-3xl mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
             <span className="accent-word-bg">
               <span>Process</span>
             </span>{" "}
             Built For Momentum
           </h2>
-          <p className="mt-4 text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl">
             Clarity early. Feedback loops mid-build. Clean handoff or ongoing
             support after launch.
           </p>
         </div>
-        <div className="grid md:grid-cols-4 gap-6">
-          {steps.map((step) => (
+
+        <div className="grid md:grid-cols-4 gap-8 relative">
+          {/* Connecting line for desktop */}
+          <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-blue-100 via-blue-200 to-blue-100 -z-10" />
+
+          {steps.map((step, i) => (
             <div
               key={step.id}
-              className="relative p-6 rounded-xl border border-gray-200 bg-white shadow-sm"
+              className="relative group"
             >
-              <span className="absolute -top-3 left-4 text-[11px] font-semibold bg-amber-100 text-amber-600 px-2 py-1 rounded">
-                {step.id}
-              </span>
-              <h3 className="font-semibold tracking-tight mb-2">
-                {step.title}
-              </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                {step.text}
-              </p>
+              <div className="w-24 h-24 rounded-2xl bg-white border border-blue-100 shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10">
+                <span className="text-2xl font-bold text-blue-600 bg-blue-50 w-12 h-12 rounded-lg flex items-center justify-center">
+                  {step.id}
+                </span>
+              </div>
+              
+              <div className="glass-card p-6 rounded-2xl h-full hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-bold text-slate-900 mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {step.text}
+                </p>
+              </div>
             </div>
           ))}
         </div>

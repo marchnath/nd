@@ -1,6 +1,5 @@
 import React from "react";
-// Social icons moved to floating component; header now only shows pricing CTA.
-
+import Image from "next/image";
 const nav = [
   { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
@@ -10,43 +9,47 @@ const nav = [
 
 const Header = () => {
   return (
-    <header className="w-full bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <a href="#" className="flex items-center space-x-2 group">
-            <img src="/logo3.png" alt="Nerdytics Logo" className="h-10 w-10" />
-            <span className="text-xl font-semibold tracking-tight">
-              Nerdytics
-            </span>
-          </a>
+    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4">
+      <header className="w-full max-w-5xl glass-panel rounded-full px-6 py-3 flex justify-between items-center transition-all duration-300 hover:shadow-lg">
+        {/* Logo */}
+        <a href="#" className="flex items-center space-x-2 group">
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={38}
+            height={38}
+            className="rounded-full w-8 h-8 md:w-[38px] md:h-[38px]"
+          />
+          <span className="text-lg font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
+            Nerdytics
+          </span>
+        </a>
 
-          {/* Nav (desktop) */}
-          <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
-            {nav.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-gray-600 hover:text-black transition-colors"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
-          {/* to services section */}
-          <div className="flex items-center gap-3">
+        {/* Nav (desktop) */}
+        <nav className="hidden md:flex items-center space-x-1">
+          {nav.map((item) => (
             <a
-              href="#services"
-              className="inline-flex items-center h-9 px-3 text-xs sm:h-11 sm:px-5 sm:text-sm font-medium border border-gray-300 rounded-full sm:rounded-md hover:bg-gray-50 transition-colors"
+              key={item.href}
+              href={item.href}
+              className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/50 rounded-full transition-all"
             >
-              <span className="sm:hidden">Services & Pricing</span>
-              <span className="hidden sm:inline">View Services & Pricing</span>
+              {item.label}
             </a>
-          </div>
+          ))}
+        </nav>
+
+        {/* CTA */}
+        <div className="flex items-center gap-3">
+          <a
+            href="#services"
+            className="inline-flex items-center h-10 px-5 text-sm font-medium text-white bg-black rounded-full hover:bg-blue-600 hover:scale-105 transition-all shadow-md hover:shadow-lg"
+          >
+            <span className="hidden sm:inline">Start Project</span>
+            <span className="sm:hidden">Start</span>
+          </a>
         </div>
-      </div>
-    </header>
+      </header>
+    </div>
   );
 };
 

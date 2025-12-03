@@ -7,9 +7,10 @@ export function Footer({
   mainLinks,
   legalLinks,
   copyright,
+  className,
 }) {
   return (
-    <footer className="pb-6 pt-16 lg:pb-8 lg:pt-24">
+    <footer className={`pb-6 pt-16 lg:pb-8 lg:pt-24 ${className || ""}`}>
       <div className="px-4 lg:px-8">
         <div className="md:flex md:items-start md:justify-between">
           <a

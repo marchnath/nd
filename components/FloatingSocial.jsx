@@ -5,13 +5,14 @@ import { buildWhatsAppLink } from "@/lib/utils";
 
 export const FloatingSocial = () => {
   return (
-    <div className="fixed z-50 bottom-5 right-5 flex flex-col items-end gap-2">
+    <div className="fixed z-50 bottom-6 right-6 flex flex-col items-end gap-3">
       {/* Attention Label */}
-      <div className="px-3 py-1 rounded-full bg-white text-[11px] font-medium text-gray-800 shadow border border-gray-200 animate-pulse select-none">
-        We are here — message us
+      <div className="px-4 py-2 rounded-xl bg-white/90 backdrop-blur-md text-xs font-bold text-slate-800 shadow-lg border border-white/50 animate-bounce select-none origin-bottom-right">
+        We are online 👋
       </div>
+      
       {/* Icons Container */}
-      <div className="group inline-flex items-center rounded-full bg-blue-600 text-white shadow-lg ring-1 ring-black/40 overflow-hidden">
+      <div className="flex flex-col gap-3">
         <a
           href={buildWhatsAppLink(
             "Hi Nerdytics, can we chat? I have a quick question."
@@ -19,19 +20,19 @@ export const FloatingSocial = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
-          className="p-3 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+          className="w-12 h-12 flex items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-green-500/30 hover:scale-110 transition-transform duration-300"
         >
-          <FaWhatsapp className="h-5 w-5" />
+          <FaWhatsapp className="h-6 w-6" />
         </a>
-        <div className="h-6 w-px bg-white/15" aria-hidden="true" />
+        
         <a
           href="https://instagram.com/nerdytics_"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="View Instagram"
-          className="p-3 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+          className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white shadow-lg shadow-pink-500/30 hover:scale-110 transition-transform duration-300"
         >
-          <FaInstagram className="h-5 w-5" />
+          <FaInstagram className="h-6 w-6" />
         </a>
       </div>
     </div>
