@@ -41,8 +41,11 @@ const Testimonials = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mb-12 md:mb-16">
+          <p className="text-xs font-semibold tracking-[0.18em] uppercase text-blue-600 mb-4">
+            Testimonials
+          </p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
-            Results &{" "}
+            Results &amp;{" "}
             <span className="accent-word-bg">
               <span>Feedback</span>
             </span>
@@ -55,26 +58,39 @@ const Testimonials = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {testimonials.map((t, i) => (
-            <div
+            <figure
               key={t.name + t.role}
-              className={`glass-card p-6 rounded-2xl flex flex-col hover:-translate-y-1 transition-transform duration-300 animate-fade-in-up`}
+              className="glass-card p-6 rounded-2xl flex flex-col hover:-translate-y-1 transition-transform duration-300 animate-fade-in-up"
               style={{ animationDelay: `${i * 100}ms` }}
             >
-              <div className="mb-4">
-                <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 text-xs font-bold">
-                  ★
-                </div>
+              <div className="mb-4 flex items-center gap-1.5">
+                {[...Array(5)].map((_, s) => (
+                  <svg
+                    key={s}
+                    viewBox="0 0 24 24"
+                    className="w-3.5 h-3.5 fill-amber-400"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                  </svg>
+                ))}
               </div>
-              <p className="text-sm text-slate-700 leading-relaxed flex-1 mb-6 font-medium">
+              <blockquote className="text-sm text-slate-700 leading-relaxed flex-1 mb-6">
                 “{t.quote}”
-              </p>
-              <div className="pt-4 border-t border-slate-100">
-                <p className="text-sm font-bold text-slate-900">{t.name}</p>
-                <p className="text-xs text-slate-500 tracking-wide uppercase mt-0.5">
-                  {t.role}
-                </p>
-              </div>
-            </div>
+              </blockquote>
+              <figcaption className="pt-4 border-t border-slate-100 flex items-center gap-3">
+                <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 text-[11px] font-bold text-white shrink-0">
+                  {t.name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-slate-900">{t.name}</p>
+                  <p className="text-xs text-slate-500 mt-0.5">{t.role}</p>
+                </div>
+              </figcaption>
+            </figure>
           ))}
         </div>
 

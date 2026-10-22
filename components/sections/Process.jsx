@@ -33,11 +33,14 @@ const Process = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mb-12 md:mb-16">
+          <p className="text-xs font-semibold tracking-[0.18em] uppercase text-blue-600 mb-4">
+            How it works
+          </p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
             <span className="accent-word-bg">
-              <span>Process</span>
+              <span>Momentum</span>
             </span>{" "}
-            Built For Momentum
+            built in
           </h2>
           <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl">
             Clarity early. Feedback loops mid-build. Clean handoff or ongoing
@@ -45,29 +48,25 @@ const Process = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-8 relative">
+        <div className="grid md:grid-cols-4 gap-10 md:gap-6 lg:gap-8 relative">
           {/* Connecting line for desktop */}
-          <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-blue-100 via-blue-200 to-blue-100 -z-10" />
+          <div className="hidden md:block absolute top-6 left-6 right-6 h-px bg-gradient-to-r from-blue-200 via-blue-300 to-blue-100" />
 
           {steps.map((step, i) => (
-            <div
-              key={step.id}
-              className="relative group"
-            >
-              <div className="w-24 h-24 rounded-2xl bg-white border border-blue-100 shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10">
-                <span className="text-2xl font-bold text-blue-600 bg-blue-50 w-12 h-12 rounded-lg flex items-center justify-center">
+            <div key={step.id} className="relative group">
+              {/* Number node */}
+              <div className="relative z-10 w-12 h-12 rounded-full bg-white border border-blue-100 shadow-sm flex items-center justify-center mb-6 group-hover:border-blue-300 group-hover:ring-4 group-hover:ring-blue-500/10 transition-all duration-300">
+                <span className="text-sm font-bold text-blue-600">
                   {step.id}
                 </span>
               </div>
-              
-              <div className="glass-card p-6 rounded-2xl h-full hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-bold text-slate-900 mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  {step.text}
-                </p>
-              </div>
+
+              <h3 className="text-lg font-bold text-slate-900 mb-3 tracking-tight">
+                {step.title}
+              </h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                {step.text}
+              </p>
             </div>
           ))}
         </div>

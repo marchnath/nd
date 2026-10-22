@@ -38,16 +38,19 @@ const WhyUs = () => {
   return (
     <section
       id="why-us"
-      className="py-20 sm:py-24 bg-slate-50 relative overflow-hidden"
+      className="py-20 sm:py-24 bg-zinc-50 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mb-12 md:mb-16">
+          <p className="text-xs font-semibold tracking-[0.18em] uppercase text-blue-600 mb-4">
+            Why us
+          </p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
             Why{" "}
             <span className="accent-word-bg">
-              <span>Work</span>
+              <span>work</span>
             </span>{" "}
-            With Us
+            with us
           </h2>
           <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl">
             A hybrid between a lean product team and an automation studio. We
@@ -61,7 +64,7 @@ const WhyUs = () => {
               key={p.title}
               className="glass-card p-8 rounded-2xl hover:-translate-y-1 transition-all duration-300 group"
             >
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+              <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 ring-1 ring-inset ring-blue-100 flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white group-hover:ring-blue-600 transition-colors">
                 {p.icon}
               </div>
               <h3 className="text-lg font-bold text-slate-900 mb-3 tracking-tight">{p.title}</h3>

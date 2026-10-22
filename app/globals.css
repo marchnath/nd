@@ -2,42 +2,64 @@
 @import "tw-animate-css";
 
 :root {
-  /* Premium Color Palette */
+  /* Refined neutral-first palette */
   --primary: 0 0 0; /* Black */
   --primary-foreground: 255 255 255;
-  
-  --accent: 37 99 235; /* Royal Blue */
+
+  --accent: 37 99 235; /* Blue */
   --accent-light: 96 165 250;
-  
+
   --glass-border: 255 255 255;
   --glass-bg: 255 255 255;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #f8fafc; /* Slate 50 */
-  color: #0f172a; /* Slate 900 */
+  background-color: #fafafa; /* Neutral 50 */
+  color: #18181b; /* Zinc 900 */
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   -webkit-font-smoothing: antialiased;
 }
 
-/* Glassmorphism Utilities */
-.glass-panel {
-  background: rgba(var(--glass-bg) / 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(var(--glass-border) / 0.5);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+/* Sticky sections get breathing room below the floating header */
+section[id] {
+  scroll-margin-top: 6rem;
 }
 
+/* Soft glass surfaces for the floating nav */
+.glass-panel {
+  background: rgba(var(--glass-bg) / 0.72);
+  backdrop-filter: blur(16px) saturate(1.6);
+  -webkit-backdrop-filter: blur(16px) saturate(1.6);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -8px rgba(15, 23, 42, 0.08);
+}
+
+/* Hairline cards — minimal, quiet elevation.
+   Focus ring on hover communicates interactivity without heavy shadows. */
 .glass-card {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 
-    0 4px 6px -1px rgba(0, 0, 0, 0.05), 
-    0 10px 15px -3px rgba(0, 0, 0, 0.05),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.glass-card:hover {
+  border-color: rgba(37, 99, 235, 0.18);
+  box-shadow: 0 24px 48px -16px rgba(15, 23, 42, 0.12);
+}
+
+/* Subtle blueprint grid for section backgrounds */
+.bg-grid-faint {
+  background-image: linear-gradient(to right, rgba(15, 23, 42, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 75%);
 }
 
 /* Animations */
@@ -70,11 +92,25 @@ body {
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
 
-/* Accent Word Styling */
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-float,
+  .animate-fade-in-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Accent Word Styling — a quiet two-tone ink/blue mark with a soft
+   underline wash. Minimal, no tilted highlight box. */
 .accent-word-bg {
   position: relative;
   display: inline-block;
+  white-space: nowrap;
   z-index: 0;
+  isolation: isolate;
 }
 .accent-word-bg > span {
   position: relative;
@@ -87,13 +123,13 @@ body {
 .accent-word-bg:before {
   content: "";
   position: absolute;
-  inset: -2px -8px;
+  inset: -2px -10px;
   background: linear-gradient(
     95deg,
-    rgba(37, 99, 235, 0.1),
-    rgba(79, 70, 229, 0.05)
+    rgba(37, 99, 235, 0.14),
+    rgba(79, 70, 229, 0.06)
   );
   border-radius: 0.5rem;
-  transform: rotate(-2deg);
-  z-index: -1;
+  transform: rotate(-1.5deg);
+  z-index: 1;
 }
